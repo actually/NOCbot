@@ -11,7 +11,8 @@ Run ./phenny, then edit ~/.phenny/default.py
 Then run ./phenny again
 """
 
-import sys, os, imp, optparse
+import sys, os, imp
+from optparse import OptionParser
 from textwrap import dedent as trim
 
 dotdir = os.path.expanduser('~/.phenny')
@@ -116,7 +117,7 @@ def config_names(config):
 def main(argv=None): 
    # Step One: Parse The Command Line
 
-   parser = optparse.OptionParser('%prog [options]')
+   parser = OptionParser('%prog [options]')
    parser.add_option('-c', '--config', metavar='fn', 
       help='use this configuration file or directory')
    opts, args = parser.parse_args(argv)
