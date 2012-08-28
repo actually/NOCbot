@@ -172,6 +172,8 @@ class Phenny(irc.Bot):
             s = unicode.__new__(cls, text)
             s.sender = origin.sender
             s.nick = origin.nick
+	    s.sso_service = self.config.sso_service
+            s.sso_realm = self.config.sso_realm
             s.event = event
             s.bytes = bytes
             s.match = match

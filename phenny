@@ -26,14 +26,14 @@ def check_python_version():
 def create_default_config(fn): 
    f = open(fn, 'w')
    print >> f, trim("""\
-   nick = 'phenny'
+   nick = 'NOCBot'
    host = 'irc.example.net'
    channels = ['#example', '#test']
    owner = 'yournickname'
 
-   # password is the NickServ password, serverpass is the server password
-   # password = 'example'
-   # serverpass = 'serverpass'
+   # There is no NickServ support here. Kerberos is used to check credentials
+   sso_service = 'krbtgt/KRB5.EXAMPLE.COM'
+   sso_REALM = 'REALM.EXAMPLE.COM'
 
    # These are people who will be able to use admin.py's functions...
    admins = [owner, 'someoneyoutrust']
